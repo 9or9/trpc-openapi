@@ -1,7 +1,7 @@
-![trpc-swagger](assets/trpc-swagger-readme.png)
+![trpc-openapi](assets/trpc-swagger-readme.png)
 
 <div align="center">
-  <h1>trpc-swagger</h1>
+  <h1>trpc-openapi</h1>
   <a href="https://www.npmjs.com/package/trpc-swagger"><img src="https://img.shields.io/npm/v/trpc-swagger.svg?style=flat&color=brightgreen" target="_blank" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-black" /></a>
   <a href="https://trpc.io/discord" target="_blank"><img src="https://img.shields.io/badge/chat-discord-blue.svg" /></a>
@@ -17,9 +17,7 @@
 - OpenAPI version 3.0.3.
 
 ## Fork Notice
-The original repo [trpc-openapi](https://github.com/James/trpc-openapi) no longer appears to be maintained. 
-The goal of this fork is to add more control for error responses, support more frameworks, and support the new procedure types in @trpc v11.x.x.
-PRs Are welcome
+This is a trpc-openapi branch, which fixes the support for Next.js app router with trpc v11. It was forked from the [trpc-swagger](https://github.com/Vercjames/package-trpc-swagger/tree/master) branch and incorporates a patch from [@ethndotsh](https://github.com/jlalmes/trpc-openapi/issues/434#issuecomment-1947796449). Currently, there may be other issues, so a pull request (PR) has not been submitted.
 
 ## Local Examples
 If you've pulled the repo. you can run any of the example projects by first running these 2 commands:
@@ -41,19 +39,19 @@ yarn workspace with-nextjs-app run build
 
 ## Usage
 
-**1. Install `trpc-swagger`**
+**1. Install `trpc-openapi `**
 
 ```bash
-npm install trpc-swagger --save
+npm install @9or9/trpc-openapi --save
 ```
 ```bash
-yarn add trpc-swagger
+yarn add @9or9/trpc-openapi
 ```
 ```bash
-pnpm add trpc-swagger
+pnpm add @9or9/trpc-openapi
 ```
 ```bash
-bun add trpc-swagger
+bun add @9or9/trpc-openapi
 ```
 
 **2. Add `OpenApiMeta` to your tRPC instance**
@@ -140,7 +138,7 @@ const body = await res.json() /* { greeting: 'Hello Verc!' } */
 **Peer dependencies**
 
 Your application requires these 2 packages installed
-- [`tRPC`](https://github.com/trpc/trpc) Server v110 (`@trpc/server`) must be installed.
+- [`tRPC`](https://github.com/trpc/trpc) Server v11 (`@trpc/server`) must be installed.
 - [`Zod`](https://github.com/colinhacks/zod) v3 (`zod@^3.14.4`) must be installed (recommended `^3.20.0`).
 
 

@@ -3621,7 +3621,7 @@
 
 "@trpc/client@^10.45.2":
   version "10.45.2"
-  resolved "https://registry.npmjs.org/@trpc/client/-/client-10.45.2.tgz"
+  resolved "https://registry.npmmirror.com/@trpc/client/-/client-10.45.2.tgz#15f9ba81303bf3417083fc6bb742e4e86b49da90"
   integrity sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg==
 
 "@trpc/server@^10.27.1", "@trpc/server@^10.45.2":
