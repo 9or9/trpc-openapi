@@ -1,17 +1,16 @@
 {
   "name": "@9or9/trpc-openapi",
   "license": "MIT",
-  "version": "2.0.0",
-  "description": "tRPC Swagger Wrapper",
-  "author": "https://github.com/vercjames",
-  "homepage": "https://github.com/vercjames/package-trpc-swagger",
-  "bugs": "https://github.com/vercjames/package-trpc-swagger/issues",
+  "version": "2.0.1",
+  "description": "tRPC openapi",
+  "author": "https://github.com/denvey",
+  "homepage": "https://github.com/9or9/trpc-openapi",
+  "bugs": "https://github.com/9or9/trpc-openapi/issues",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vercjames/package-trpc-swagger.git"
+    "url": "git+https://github.com/9or9/trpc-openapi.git"
   },
   "scripts": {
     "build": "tsup --format cjs,esm --dts",

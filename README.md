@@ -59,7 +59,7 @@ bun add @9or9/trpc-openapi
 ```typescript
 // @/server/trpc.ts
 import { initTRPC } from '@trpc/server'
-import { OpenApiMeta } from 'trpc-swagger'
+import { OpenApiMeta } from '@9or9/trpc-openapi'
 
 // VERC: This
 const t = initTRPC.create()
@@ -97,7 +97,7 @@ export const appRouter = t.router({
 
 ```typescript
 // @/server/swagger.ts
-import { generateOpenApiDocument } from 'trpc-swagger'
+import { generateOpenApiDocument } from '@9or9/trpc-openapi'
 import { appRouter } from './appRouter'
 
 /* 👇 */
@@ -110,13 +110,13 @@ export const openApiDocument = generateOpenApiDocument(appRouter, {
 })
 ```
 
-**5. Add an `trpc-swagger` handler to your app.**
+**5. Add an `@9or9/trpc-openapi` handler to your app.**
 
 We currently support adapters for [`Express`](http://expressjs.com/), [`Next.js`](https://nextjs.org/),  [`Next.js 14`](https://nextjs.org/), [`Serverless`](https://www.serverless.com/), [`Fastify`](https://www.fastify.io/), [`Nuxt`](https://nuxtjs.org/) & [`Node:HTTP`](https://nodejs.org/api/http.html).
 
 ```typescript
 import http from 'http'
-import { createOpenApiHttpHandler } from 'trpc-swagger'
+import { createOpenApiHttpHandler } from '@9or9/trpc-openapi'
 
 import { appRouter } from '../appRouter'
 
@@ -258,7 +258,7 @@ Explore a [complete example here](examples/with-nextjs/src/server/router.ts).
 
 ```typescript
 import { TRPCError, initTRPC } from '@trpc/server'
-import { OpenApiMeta } from 'trpc-swagger'
+import { OpenApiMeta } from '@9or9/trpc-openapi'
 
 type User = { id: string, name: string }
 
@@ -317,7 +317,7 @@ Please see [full example here](examples/with-express).
 ```typescript
 import { createExpressMiddleware } from '@trpc/server/adapters/express'
 import express from 'express'
-import { createOpenApiExpressMiddleware } from 'trpc-swagger'
+import { createOpenApiExpressMiddleware } from '@9or9/trpc-openapi'
 
 import { appRouter } from '../appRouter'
 
@@ -335,7 +335,7 @@ Please see [full example here](examples/with-nextjs).
 
 ```typescript
 // pages/api/[...trpc].ts
-import { createOpenApiNextHandler } from 'trpc-swagger'
+import { createOpenApiNextHandler } from '@9or9/trpc-openapi'
 
 import { appRouter } from '../../server/appRouter'
 
@@ -347,7 +347,7 @@ export default createOpenApiNextHandler({ router: appRouter })
 Please see [full example here](examples/with-serverless).
 
 ```typescript
-import { createOpenApiAwsLambdaHandler } from 'trpc-swagger'
+import { createOpenApiAwsLambdaHandler } from '@9or9/trpc-openapi'
 
 import { appRouter } from './appRouter'
 
@@ -361,7 +361,7 @@ Please see [full example here](examples/with-fastify).
 ```typescript
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import Fastify from 'fastify'
-import { fastifyTRPCOpenApiPlugin } from 'trpc-swagger'
+import { fastifyTRPCOpenApiPlugin } from '@9or9/trpc-openapi'
 
 import { appRouter } from './router'
 
@@ -399,7 +399,7 @@ Please see [full typings here](packages/types.ts).
 
 | Property         | Type                               | Description                                                                                                        | Required | Default                |
 | ---------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------- | ---------------------- |
-| `enabled`        | `boolean`                          | Exposes this procedure to `trpc-swagger` adapters and on the OpenAPI document.                                     | `false`  | `true`                 |
+| `enabled`        | `boolean`                          | Exposes this procedure to `@9or9/trpc-openapi` adapters and on the OpenAPI document.                                     | `false`  | `true`                 |
 | `method`         | `HttpMethod`                       | HTTP method this endpoint is exposed on. Value can be `GET`, `POST`, `PATCH`, `PUT` or `DELETE`.                   | `true`   | `undefined`            |
 | `path`           | `string`                           | Pathname this endpoint is exposed on. Value must start with `/`, specify path parameters using `{}`.               | `true`   | `undefined`            |
 | `protect`        | `boolean`                          | Requires this endpoint to use a security scheme.                                                                   | `false`  | `false`                |
